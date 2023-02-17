@@ -1,0 +1,1 @@
+This is a simple github action to mauto merge code between branches.
