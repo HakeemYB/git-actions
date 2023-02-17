@@ -18,7 +18,7 @@ jobs:
 
 
     
-    - name: Merge DEV -> PROD
+    - name: Merge master -> main
       uses: devmasx/merge-branch@master
       with:
         type: now
