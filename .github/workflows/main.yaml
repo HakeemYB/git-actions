@@ -1,0 +1,27 @@
+
+name: merge code
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+
+    
+    - name: Merge DEV -> PROD
+      uses: devmasx/merge-branch@master
+      with:
+        type: now
+        from_branch: master
+        target_branch: main
+        github_token: ${{ secrets.GIT_TOKEN }}
